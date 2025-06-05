@@ -16,7 +16,7 @@ return new class extends Migration
         DB::table('tbl_user')->insert([
             'nik' => '00001',
             'name' => 'Administrator',
-            'role' => 'admin',
+            'role_id' => 1,
             'password' => Hash::make('admin'),
             'created_at' => now(),
             'updated_at' => now(),

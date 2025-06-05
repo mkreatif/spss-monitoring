@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nik');
             $table->string('name', 50);
-            $table->string('role', 50);
+            $table->integer('role_id');
             $table->string('password', 255); // lebih aman hash panjang
             $table->timestamps();
         });

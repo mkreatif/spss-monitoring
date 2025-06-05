@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,11 +12,19 @@ class User extends Authenticatable
     protected $table = 'tbl_user'; // penting!
 
     protected $fillable = [
-        'nik', 'name', 'role', 'password',
+        'nik',
+        'name',
+        'role',
+        'password',
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
-}
 
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
+}
