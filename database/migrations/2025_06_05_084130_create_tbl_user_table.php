@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('tbl_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('nik');
+            $table->string('nik');
             $table->string('name', 50);
             $table->string('role', 50);
             $table->string('password', 255); // lebih aman hash panjang
