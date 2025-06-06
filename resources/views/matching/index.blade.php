@@ -3,14 +3,18 @@
 @section('content')
 <!-- Tombol Tambah User -->
 <div class="p-4">
-    <a href="{{ route('user.create') }}" class="btn btn-primary mb-3">+ Create New User</a>
+    <a href="{{ route('expedition.create') }}" class="btn btn-primary mb-3">+ Create New Report Matching</a>
 </div>
-<table id="users-table" class="display">
+<table id="expedition-table" class="display">
     <thead>
         <tr>
             <th>No</th>
-            <th>Nama</th>
-            <th>Role</th>
+            <th>Cabang</th>
+            <th>MO</th>
+            <th>AWB</th>
+            <th>DN</th>
+            <th>Expedition Name</th>
+            <th>Action</th>
         </tr>
     </thead>
 </table>
@@ -19,10 +23,10 @@
 @push('scripts')
 <script>
     $(function() {
-        $('#users-table').DataTable({
+        $('#expedition-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{{ route("user.data") }}',
+            ajax: '{{ route("expedition.data") }}',
             columns: [{
                     data: 'DT_RowIndex',
                     name: 'DT_RowIndex',
@@ -30,12 +34,12 @@
                     searchable: false
                 },
                 {
-                    data: 'name',
-                    name: 'name'
+                    data: 'expedition_name',
+                    name: 'expedition_name'
                 },
                 {
-                    data: 'role',
-                    name: 'role'
+                    data: 'action',
+                    name: 'action'
                 },
             ]
         });
