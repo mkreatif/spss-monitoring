@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,15 @@ Route::get('/dashboard', function () {
 
 Route::post('/logout', function () {
     Auth::logout();
-    return redirect('/');
+    return redirect('/login');
 })->name('logout');
+
+
+Route::get('/user', [UserController::class, 'index'])->name('user.index');;
+Route::get('/user/data', [UserController::class, 'getData'])->name('user.data');
+Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+Route::post('/user', [UserController::class, 'store'])->name('user.store');
+
+Route::get('/expedition', [UserController::class, 'index'])->name('expedition.index');;
+Route::get('/template', [UserController::class, 'index'])->name('template.index');;
+Route::get('/matching', [UserController::class, 'index'])->name('matching.index');;
