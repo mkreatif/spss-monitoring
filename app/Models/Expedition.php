@@ -11,10 +11,14 @@ class Expedition extends Model
 
     protected $table = 'tbl_expedisi'; // penting!
 
-       protected $fillable = [
+    protected $fillable = [
         'expedition_name',
     ];
 
     public $timestamps = true;
 
+    public function templates()
+    {
+        return $this->hasMany(Template::class, 'expedition_id');
+    }
 }

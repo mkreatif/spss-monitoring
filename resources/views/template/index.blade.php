@@ -33,6 +33,10 @@
                     orderable: false,
                     searchable: false
                 },
+                 {
+                    data: 'cabang',
+                    name: 'cabang'
+                },
                 {
                     data: 'expedition_name',
                     name: 'expedition_name'
@@ -41,13 +45,10 @@
                     data: 'awb_number',
                     name: 'awb_number'
                 },
+               
                 {
-                    data: 'cabang',
-                    name: 'cabang'
-                },
-                {
-                    data: 'item_code',
-                    name: 'item_code'
+                    data: 'is_need_matching',
+                    name: 'is_need_matching'
                 },
                 {
                     data: 'action',
